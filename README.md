@@ -343,27 +343,37 @@ Durante el desarrollo del proyecto se aplicaron conceptos como:
 
 ## 📸 Evidencias
 
-### Aplicación funcionando
+### ☀️ Aplicación — Modo claro
 
-> Agregar aquí captura de la aplicación mostrando el catálogo.
+Vista principal de Vue Product Showcase mostrando el catálogo de productos obtenido desde Fake Store API.
 
-### Filtro por categoría
+![Vue Product Showcase - Modo claro](docs/images/app-light.png)
 
-> Agregar aquí captura mostrando el filtro `electronics`.
+### 🔍 Filtrado por categoría
 
-### Tema oscuro
+Filtrado dinámico de productos utilizando la categoría `electronics`.
 
-> Agregar aquí captura de la aplicación utilizando el modo oscuro.
+![Filtro de productos electrónicos](docs/images/filter-electronics.png)
 
-### Pruebas unitarias
+### 🌙 Aplicación — Modo oscuro
 
-> Agregar aquí captura de Jest mostrando las 2 pruebas aprobadas.
+La aplicación permite alternar dinámicamente entre tema claro y oscuro mediante el sistema de temas de Vuetify.
 
-### Prueba End-to-End
+![Vue Product Showcase - Modo oscuro](docs/images/app-dark.png)
 
-> Agregar aquí captura de Cypress mostrando la prueba aprobada.
+### 🧪 Pruebas unitarias
 
----
+Pruebas realizadas con Jest y Vue Test Utils para validar el comportamiento de los componentes principales.
+
+**Resultado: 2 pruebas aprobadas.**
+
+![Pruebas unitarias Jest](docs/images/jest-tests.png)
+
+### 🚀 Prueba End-to-End
+
+Prueba E2E realizada con Cypress simulando el filtrado de productos desde la interfaz.
+
+![Prueba E2E Cypress](docs/images/cypress-e2e.png)
 
 ## 🎯 Objetivo del proyecto
 
