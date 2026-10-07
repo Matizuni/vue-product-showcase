@@ -10,28 +10,53 @@ El proyecto fue desarrollado como parte del **Módulo 7 de Front-End**, aplicand
 
 **Vue Product Showcase** es un catálogo interactivo de productos que consume información desde **Fake Store API** mediante Axios.
 
-La aplicación permite visualizar productos, filtrarlos por categoría, agregarlos a favoritos y utilizar una interfaz adaptable a distintos dispositivos.
+La aplicación permite:
 
-Además, incorpora un sistema de **tema claro y oscuro** utilizando Vuetify.
+- Visualizar productos.
+- Filtrar productos por categoría.
+- Agregar y eliminar productos de favoritos.
+- Consultar dinámicamente la cantidad de favoritos.
+- Utilizar una interfaz responsive.
+- Alternar entre tema claro y oscuro.
+- Gestionar estados de carga y errores.
+
+El proyecto también incorpora pruebas unitarias y una prueba End-to-End para validar funcionalidades principales de la aplicación.
+
+---
+
+## 🎯 Objetivo del proyecto
+
+El objetivo principal es demostrar la capacidad de desarrollar una aplicación Front-End moderna utilizando Vue 3, integrando:
+
+- Consumo de APIs REST.
+- Gestión de estado global.
+- Componentes reutilizables.
+- Programación asíncrona.
+- Manejo de errores.
+- Diseño responsive.
+- Sistemas de temas.
+- Pruebas unitarias.
+- Pruebas End-to-End.
 
 ---
 
 ## ✨ Características principales
 
-- Consumo de API REST mediante Axios.
-- Visualización dinámica de productos.
-- Filtrado de productos por categoría.
-- Gestión de estado global mediante Vuex.
-- Módulos independientes para productos, filtros y favoritos.
-- Sistema para agregar y quitar productos favoritos.
-- Contador dinámico de favoritos.
-- Interfaz desarrollada con Vuetify 3.
-- Tema claro y oscuro.
-- Diseño responsive.
-- Manejo visual de estados de carga.
-- Manejo de errores durante el consumo de la API.
-- Pruebas unitarias con Jest y Vue Test Utils.
-- Prueba End-to-End con Cypress.
+- 🌐 Consumo de API REST mediante Axios.
+- 🛍️ Visualización dinámica de productos.
+- 🔍 Filtrado de productos por categoría.
+- 🧠 Gestión de estado global mediante Vuex.
+- 📦 Módulos independientes para productos, filtros y favoritos.
+- ❤️ Sistema para agregar y eliminar productos favoritos.
+- 🔢 Contador dinámico de favoritos.
+- 🎨 Interfaz desarrollada con Vuetify 3.
+- ☀️ Tema claro.
+- 🌙 Tema oscuro.
+- 📱 Diseño responsive.
+- ⏳ Manejo visual de estados de carga.
+- ⚠️ Manejo de errores durante el consumo de la API.
+- 🧪 Pruebas unitarias con Jest y Vue Test Utils.
+- 🚀 Prueba End-to-End con Cypress.
 
 ---
 
@@ -79,146 +104,80 @@ src/
 │
 ├── App.vue
 └── main.js
-```
 
-### Módulo `products`
-
+📦 Módulo products
 Se encarga de:
-
 - Obtener los productos desde la API.
 - Gestionar el estado de carga.
 - Gestionar posibles errores.
 - Almacenar los productos obtenidos.
-
-### Módulo `filters`
-
-Gestiona la categoría seleccionada por el usuario para el filtrado de productos.
-
-### Módulo `favorites`
-
+🔍 Módulo filters
+Gestiona la categoría seleccionada por el usuario para realizar el filtrado de productos.
+❤️ Módulo favorites
 Permite:
-
 - Agregar productos a favoritos.
 - Eliminar productos de favoritos.
 - Comprobar si un producto es favorito.
 - Obtener la cantidad total de favoritos.
-
----
-
-## 🌐 API utilizada
-
-El proyecto utiliza **Fake Store API** como fuente de datos.
-
-Endpoint utilizado:
-
-```text
+🌐 API utilizada
+El proyecto utiliza Fake Store API como fuente de datos.
+Endpoint
 https://fakestoreapi.com/products
-```
 
 Los productos son obtenidos mediante una petición HTTP realizada con Axios.
-
-Ejemplo:
-
-```javascript
+Ejemplo
 const response = await axios.get(
   'https://fakestoreapi.com/products'
 )
-```
 
----
-
-## 🎨 Interfaz de usuario
-
-La interfaz fue desarrollada utilizando **Vuetify 3**, incorporando componentes visuales como:
-
+🎨 Interfaz de usuario
+La interfaz fue desarrollada utilizando Vuetify 3, incorporando componentes visuales como:
 - Cards.
 - Botones.
 - Selectores.
 - Alertas.
 - Indicadores de carga.
 - Sistema de temas.
-
-La aplicación cuenta además con **modo claro y modo oscuro**.
-
+La aplicación cuenta además con modo claro y modo oscuro.
 El diseño es responsive y se adapta a diferentes tamaños de pantalla, incluyendo computadores, tablets y dispositivos móviles.
-
----
-
-## ❤️ Sistema de favoritos
-
+❤️ Sistema de favoritos
 Cada producto puede ser agregado o eliminado de favoritos.
-
-El estado de los favoritos es administrado globalmente mediante **Vuex**, permitiendo que distintos componentes puedan acceder a la misma información.
-
+El estado de los favoritos es administrado globalmente mediante Vuex, permitiendo que distintos componentes puedan acceder a la misma información.
 El encabezado de la aplicación muestra dinámicamente la cantidad de productos seleccionados como favoritos.
-
----
-
-## 🔍 Filtrado de productos
-
+🔍 Filtrado de productos
 Los productos pueden filtrarse según su categoría.
-
 Entre las categorías entregadas por la API se encuentran:
-
 - electronics
 - jewelery
 - men's clothing
 - women's clothing
-
 Al seleccionar una categoría, la interfaz actualiza automáticamente los productos mostrados.
-
----
-
-## 🧪 Pruebas automatizadas
-
+🧪 Pruebas automatizadas
 El proyecto incorpora pruebas unitarias y una prueba End-to-End.
-
-### Pruebas unitarias
-
+🔬 Pruebas unitarias
 Las pruebas unitarias fueron desarrolladas utilizando:
-
 - Jest
 - Vue Test Utils
-
-Se implementaron **2 pruebas unitarias**.
-
-#### ProductCard
-
+Se implementaron 2 pruebas unitarias.
+ProductCard
 Comprueba que el componente renderice correctamente la información de un producto.
-
 Se validan elementos como:
-
 - Título.
 - Categoría.
 - Descripción.
 - Precio.
-
-#### ProductList
-
+ProductList
 Comprueba la respuesta visual de la aplicación cuando ocurre un error durante la obtención de productos desde la API.
-
-Para ejecutar las pruebas:
-
-```bash
+Ejecutar pruebas unitarias
 npm run test:unit
-```
 
-Resultado esperado:
-
-```text
+Resultado
 Test Suites: 2 passed, 2 total
 Tests:       2 passed, 2 total
-```
 
----
-
-## 🚀 Prueba End-to-End
-
-La prueba E2E fue desarrollada utilizando **Cypress**.
-
+🚀 Prueba End-to-End
+La prueba E2E fue desarrollada utilizando Cypress.
 La prueba simula el comportamiento de un usuario real:
-
-```text
 Usuario ingresa a la aplicación
         ↓
 Se cargan los productos
@@ -230,96 +189,54 @@ Selecciona "electronics"
 La aplicación actualiza el catálogo
         ↓
 Se muestran únicamente productos electrónicos
-```
 
-La prueba comprueba que inicialmente se carguen **20 productos** y que, después de seleccionar la categoría `electronics`, se muestren los productos correspondientes a esa categoría.
-
-Para ejecutar Cypress:
-
-```bash
+La prueba comprueba que inicialmente se carguen 20 productos y que, después de seleccionar la categoría electronics, se muestren los productos correspondientes a esa categoría.
+Ejecutar Cypress
 npm run test:e2e
-```
 
----
+⚙️ Instalación
+Requisitos
+- Node.js
+- npm
+1. Clonar el repositorio
+git clone https://github.com/Matizuni/vue-product-showcase.git
 
-## ⚙️ Instalación
-
-### 1. Clonar el repositorio
-
-```bash
-git clone URL-DEL-REPOSITORIO
-```
-
-### 2. Entrar al proyecto
-
-```bash
+2. Entrar al proyecto
 cd vue-product-showcase
-```
 
-### 3. Instalar dependencias
-
-```bash
+3. Instalar dependencias
 npm install
-```
 
-### 4. Ejecutar la aplicación
-
-```bash
+4. Ejecutar la aplicación
 npm run serve
-```
 
 Vue CLI mostrará la dirección local de desarrollo, normalmente:
-
-```text
 http://localhost:8080/
-```
 
----
-
-## 🧪 Ejecutar pruebas
-
-### Pruebas unitarias
-
-```bash
+🧪 Ejecutar pruebas
+Pruebas unitarias
 npm run test:unit
-```
 
-### Pruebas End-to-End
-
-```bash
+Pruebas End-to-End
 npm run test:e2e
-```
 
----
-
-## 📱 Responsive Design
-
+📱 Responsive Design
 La interfaz fue diseñada para adaptarse a diferentes resoluciones.
-
-En pantallas grandes, el catálogo utiliza una distribución de varias columnas.
-
-En tablets, la cantidad de columnas disminuye para mantener una correcta visualización.
-
-En dispositivos móviles, los productos se presentan principalmente en una sola columna.
-
----
-
-## 🌙 Tema claro y oscuro
-
+🖥️ Escritorio
+El catálogo utiliza una distribución de varias columnas para aprovechar el espacio disponible.
+📱 Tablets
+La cantidad de columnas disminuye para mantener una correcta visualización.
+📲 Dispositivos móviles
+Los productos se presentan principalmente en una sola columna para facilitar la navegación.
+🌙 Tema claro y oscuro
 La aplicación incorpora un selector de tema que permite alternar entre:
-
 - ☀️ Modo claro
 - 🌙 Modo oscuro
-
 El sistema utiliza el manejo de temas proporcionado por Vuetify.
-
----
-
-## 📚 Conceptos aplicados
-
+📚 Conceptos aplicados
 Durante el desarrollo del proyecto se aplicaron conceptos como:
-
 - Componentización en Vue.
+- Componentes reutilizables.
 - Props.
 - Computed properties.
 - Métodos.
@@ -338,68 +255,55 @@ Durante el desarrollo del proyecto se aplicaron conceptos como:
 - Librerías de componentes.
 - Pruebas unitarias.
 - Pruebas End-to-End.
+🧠 Aprendizajes
+Este proyecto permitió consolidar conocimientos en:
+- Arquitectura basada en componentes con Vue 3.
+- Gestión de estado global con Vuex.
+- Consumo y manejo de APIs REST.
+- Programación asíncrona con Axios.
+- Diseño de interfaces utilizando Vuetify.
+- Manejo de estados de carga y errores.
+- Diseño responsive.
+- Implementación de sistemas de temas.
+- Pruebas unitarias con Jest y Vue Test Utils.
+- Pruebas End-to-End con Cypress.
+📸 Evidencias
+Las imágenes utilizadas en esta sección se encuentran dentro del directorio:
+docs/images/
 
----
+📁 Estructura de evidencias
+docs/
+└── images/
+    ├── app-light.png
+    ├── filter-electronics.png
+    ├── app-dark.png
+    ├── jest-tests.png
+    └── cypress-e2e.png
 
-## 📸 Evidencias
-
-### ☀️ Aplicación — Modo claro
-
+☀️ Aplicación — Modo claro
 Vista principal de Vue Product Showcase mostrando el catálogo de productos obtenido desde Fake Store API.
 
-![Vue Product Showcase - Modo claro](docs/images/app-light.png)
+🔍 Filtrado por categoría
+Filtrado dinámico de productos utilizando la categoría electronics.
 
-### 🔍 Filtrado por categoría
-
-Filtrado dinámico de productos utilizando la categoría `electronics`.
-
-![Filtro de productos electrónicos](docs/images/filter-electronics.png)
-
-### 🌙 Aplicación — Modo oscuro
-
+🌙 Aplicación — Modo oscuro
 La aplicación permite alternar dinámicamente entre tema claro y oscuro mediante el sistema de temas de Vuetify.
 
-![Vue Product Showcase - Modo oscuro](docs/images/app-dark.png)
-
-### 🧪 Pruebas unitarias
-
+🧪 Pruebas unitarias
 Pruebas realizadas con Jest y Vue Test Utils para validar el comportamiento de los componentes principales.
+Resultado: 2 pruebas aprobadas.
 
-**Resultado: 2 pruebas aprobadas.**
-
-![Pruebas unitarias Jest](docs/images/jest-tests.png)
-
-### 🚀 Prueba End-to-End
-
+🚀 Prueba End-to-End
 Prueba E2E realizada con Cypress simulando el filtrado de productos desde la interfaz.
 
-![Prueba E2E Cypress](docs/images/cypress-e2e.png)
-
-## 🎯 Objetivo del proyecto
-
-El objetivo principal del proyecto es demostrar la capacidad de desarrollar una aplicación Front-End moderna utilizando Vue, integrando consumo de datos externos, gestión de estado global, componentes reutilizables, pruebas automatizadas y una interfaz profesional.
-
----
-
-## 👨‍💻 Autor
-
-**Matías Zúñiga**
-
-Proyecto desarrollado como parte de formación en desarrollo **Front-End**.
-
----
-
-## 📄 Estado del proyecto
-
-**Proyecto funcional y completado.**
-
-- API REST: ✅
-- Axios: ✅
-- Vuex: ✅
-- Filtros: ✅
-- Favoritos: ✅
-- Vuetify: ✅
-- Responsive Design: ✅
-- Tema claro/oscuro: ✅
-- Pruebas unitarias: ✅
-- Prueba E2E: ✅
+🎯 Propósito profesional
+Este proyecto forma parte de mi proceso de formación en desarrollo Front-End y demuestra la aplicación práctica de conceptos de desarrollo de software, arquitectura de componentes, consumo de APIs, gestión de estado y testing automatizado.
+La experiencia adquirida durante su desarrollo constituye una base para continuar evolucionando hacia proyectos de mayor complejidad y soluciones tecnológicas integrales.
+👨‍💻 Autor
+Matías Zúñiga
+Estudiante de Técnico Universitario en Ciberseguridad y desarrollador de soluciones digitales.
+🔗 Enlaces
+- 🌐 Portafolio
+- 💼 LinkedIn
+- 💻 GitHub
+- 📦 Repositorio
